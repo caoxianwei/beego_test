@@ -14,10 +14,10 @@ func (c *MainController) Get() {
 	c.TplName = "index.tpl"
 }
 
-type UserController struct {
-	beego.Controller
-}
-
-func (c *UserController) Get() {
-	c.Ctx.WriteString("hello world")
-}
+//type UserController struct {
+//	beego.Controller
+//}
+//
+//func (c *UserController) Get() {
+//	c.Ctx.WriteString("hello world")
+//}
