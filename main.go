@@ -19,8 +19,43 @@ func inserUser()  {
 	beego.Info("insert success, id =", id)
 }
 
+func QueryUser()  {
+	o := orm.NewOrm()
+	user := models.User{Id: 1}
+	err := o.Read(&user)
+	if err != nil {
+		beego.Info("query is err")
+		return
+	}
+	beego.Info("query success, user =", user)
+}
+
+func userUpdate()  {
+	o := orm.NewOrm()
+	user := models.User{Id:1, Name:"hahwwww"}
+	_, err := o.Update(&user)
+	if err != nil {
+		beego.Info("update err")
+		return
+	}
+	beego.Info("update success")
+}
+
+func userDelete()  {
+	o := orm.NewOrm()
+	user := models.User{Id:2}
+	_, err := o.Delete(&user)
+	if err != nil {
+		beego.Info("Delete err")
+		return
+	}
+	beego.Info("Delete success")
+}
 func main() {
 	inserUser()
+	QueryUser()
+	//userUpdate()
+	//userDelete()
 	beego.Run()
 }
 
